@@ -1,0 +1,13 @@
+Credits # : Joongwon Kim, Aman Singh
+Project Name : First fit malloc
+Files included : memgrind.c, mymallo.c, mymalloc.h, testcases.txt, readme.pdf, Makefile
+What does program do: 
+mymalloc.c - includes all the function and implmentation of malloc and free
+             - simulate malloc implementation on static memory of 5000 bytes. 
+malloc function 
+	- program is based on first fit algorithm which finds first fitting or next fitting block of unallocated memory.
+	- For space efficiency, we divded base into two group, one for smaller allocated block 	and one for larger. It will reduce fragmentation if user require big block often.
+	- malloc will give away block after it checks for block size and current free block, and  it also checks for isFree variable which is for detecting free vs allocated block.
+free function 
+	- checks for freeing address that are not pointer or those pointers not allocated by malloc
+	- also checks for redundant free
